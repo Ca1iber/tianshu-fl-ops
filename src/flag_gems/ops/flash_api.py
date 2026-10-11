@@ -14,6 +14,7 @@
 
 import logging
 import math
+import os
 
 import torch
 import triton
@@ -537,11 +538,27 @@ def mha_varlan_fwd(
             params.k_ptr = k.view(k.shape[0], k.shape[1], -1)
             params.v_ptr = v.view(v.shape[0], v.shape[1], -1)
         logger.debug("kernel: flash_varlen_fwd")
-        grid = lambda args: (
-            triton.cdiv(max_seqlen_q, args["BLOCK_M"]),
-            batch_size,
-            num_heads,
+        # In a mixed batch a single prefill chunk can be much longer than all
+        # decode queries. Avoid launching max_query_tiles * batch_size CTAs.
+        # Prefix floor(cu_q[i] / BLOCK_M) + i assigns enough tiles to every
+        # sequence using GPU metadata, with at most one extra tile per sequence.
+        compact_varlen_grid = (
+            flag_gems.vendor_name == "iluvatar"
+            and cu_seqlens_q is not None
+            and os.environ.get("FLAGGEMS_ILUVATAR_COMPACT_VARLEN", "0") == "1"
+            and not is_dropout
         )
+        if compact_varlen_grid:
+            grid = lambda args: (
+                total_q // args["BLOCK_M"] + batch_size,
+                num_heads,
+            )
+        else:
+            grid = lambda args: (
+                triton.cdiv(max_seqlen_q, args["BLOCK_M"]),
+                batch_size,
+                num_heads,
+            )
         kernel = flash_varlen_fwd_kernel[grid]
         args = tuple(getattr(params, k) for k in params.__slots__)
 
@@ -576,7 +593,7 @@ def mha_varlan_fwd(
         }
 
         logger.debug("Running flash_varlen_fwd_kernel with config: %s", cfg_params)
-        kernel(*args, **cfg_params)
+        kernel(*args, **cfg_params, COMPACT_VARLEN_GRID=compact_varlen_grid)
 
         if seqlenq_ngroups_swapped:
             out = out.reshape(

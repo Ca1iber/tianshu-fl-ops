@@ -1332,10 +1332,29 @@ def flash_varlen_fwd_kernel(
     BLOCK_K: tl.constexpr,
     num_warps: tl.constexpr,
     num_stages: tl.constexpr,
+    COMPACT_VARLEN_GRID: tl.constexpr = False,
 ):
-    m_block = tl.program_id(0)
-    bid = tl.program_id(1)
-    hid = tl.program_id(2)
+    if COMPACT_VARLEN_GRID:
+        tl.static_assert(is_cu_seqlens_q)
+        global_block = tl.program_id(0)
+        hid = tl.program_id(1)
+        # Find the last sequence whose tile prefix is <= global_block.
+        # Prefixes are strictly increasing even for empty query sequences.
+        lo = 0
+        hi = b - 1
+        while lo < hi:
+            mid = (lo + hi + 1) // 2
+            prefix = tl.load(cu_seqlens_q_ptr + mid).to(tl.int32) // BLOCK_M + mid
+            before = prefix <= global_block
+            lo = tl.where(before, mid, lo)
+            hi = tl.where(before, hi, mid - 1)
+        bid = lo
+        q_start = tl.load(cu_seqlens_q_ptr + bid).to(tl.int32)
+        m_block = global_block - (q_start // BLOCK_M + bid)
+    else:
+        m_block = tl.program_id(0)
+        bid = tl.program_id(1)
+        hid = tl.program_id(2)
     # num_m_blocks = tl.cdiv(seqlen_q, BLOCK_M)
 
     if is_cu_seqlens_q:
@@ -1367,8 +1386,12 @@ def flash_varlen_fwd_kernel(
         k_len = k_len_cache
 
     # Noop CTA
-    if m_block * BLOCK_M > q_len:
-        return
+    if COMPACT_VARLEN_GRID:
+        if m_block * BLOCK_M >= q_len:
+            return
+    else:
+        if m_block * BLOCK_M > q_len:
+            return
 
     # is_even_mn = (q_len % BLOCK_M == 0) and (k_len % BLOCK_N == 0)
     is_even_mn: tl.constexpr = False
