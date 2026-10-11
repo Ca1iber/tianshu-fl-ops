@@ -1,0 +1,316 @@
+{
+  "official_benchmark": false,
+  "workload": {
+    "input_tokens": 4096,
+    "output_tokens": 64,
+    "concurrency": 16,
+    "requests_per_round": 16,
+    "rounds": 5
+  },
+  "service": {
+    "original": {
+      "startup_seconds": 153.10374296992086,
+      "round_seconds": [
+        43.299091208959,
+        20.289624729193747,
+        20.29695145599544,
+        20.29437381401658,
+        20.311273930128664
+      ],
+      "later_four": {
+        "mean": 3279.132276444933,
+        "min": 3276.997800776466,
+        "max": 3280.4943851046232,
+        "population_stddev": 1.3034898991902568,
+        "spread_percent": 0.10663139005626998
+      },
+      "later_four_mean_ttft_ms": 10293.65572243114,
+      "gpu_kv_tokens": 521936,
+      "runtime_autotune_records": 0,
+      "requests_complete": 87,
+      "active_hook": null,
+      "gpu_idle_after": true,
+      "usage_cpuinfo_warning": true
+    },
+    "row": {
+      "startup_seconds": 153.1013244241476,
+      "round_seconds": [
+        43.63954783580266,
+        20.26962284417823,
+        20.274882780155167,
+        20.229403706965968,
+        20.285310377832502
+      ],
+      "later_four": {
+        "mean": 3284.515848195144,
+        "min": 3281.1920922213653,
+        "max": 3290.2601067316755,
+        "population_stddev": 3.440063405466601,
+        "spread_percent": 0.2760837496123839
+      },
+      "later_four_mean_ttft_ms": 10214.708457653614,
+      "gpu_kv_tokens": 521744,
+      "runtime_autotune_records": 0,
+      "requests_complete": 87,
+      "active_hook": {
+        "mode": "row",
+        "pid": 21451,
+        "python_callbacks": 84,
+        "packed_bytes": 0,
+        "registered_layers": [
+          "model.layers.0.mlp.down_proj",
+          "model.layers.1.mlp.down_proj",
+          "model.layers.2.mlp.down_proj",
+          "model.layers.3.mlp.down_proj",
+          "model.layers.4.mlp.down_proj",
+          "model.layers.5.mlp.down_proj",
+          "model.layers.6.mlp.down_proj",
+          "model.layers.7.mlp.down_proj",
+          "model.layers.8.mlp.down_proj",
+          "model.layers.9.mlp.down_proj",
+          "model.layers.10.mlp.down_proj",
+          "model.layers.11.mlp.down_proj",
+          "model.layers.12.mlp.down_proj",
+          "model.layers.13.mlp.down_proj",
+          "model.layers.14.mlp.down_proj",
+          "model.layers.15.mlp.down_proj",
+          "model.layers.16.mlp.down_proj",
+          "model.layers.17.mlp.down_proj",
+          "model.layers.18.mlp.down_proj",
+          "model.layers.19.mlp.down_proj",
+          "model.layers.20.mlp.down_proj",
+          "model.layers.21.mlp.down_proj",
+          "model.layers.22.mlp.down_proj",
+          "model.layers.23.mlp.down_proj",
+          "model.layers.24.mlp.down_proj",
+          "model.layers.25.mlp.down_proj",
+          "model.layers.26.mlp.down_proj",
+          "model.layers.27.mlp.down_proj",
+          "model.layers.28.mlp.down_proj",
+          "model.layers.29.mlp.down_proj",
+          "model.layers.30.mlp.down_proj",
+          "model.layers.31.mlp.down_proj",
+          "model.layers.32.mlp.down_proj",
+          "model.layers.33.mlp.down_proj",
+          "model.layers.34.mlp.down_proj",
+          "model.layers.35.mlp.down_proj",
+          "model.layers.36.mlp.down_proj",
+          "model.layers.37.mlp.down_proj",
+          "model.layers.38.mlp.down_proj",
+          "model.layers.39.mlp.down_proj",
+          "model.layers.40.mlp.down_proj",
+          "model.layers.41.mlp.down_proj"
+        ],
+        "live_validations": [
+          {
+            "name": "model.layers.0.mlp.down_proj",
+            "shape": [
+              2048,
+              2048,
+              6144
+            ],
+            "bitwise_equal": true,
+            "max_abs": 0.0
+          },
+          {
+            "name": "model.layers.21.mlp.down_proj",
+            "shape": [
+              2048,
+              2048,
+              6144
+            ],
+            "bitwise_equal": true,
+            "max_abs": 0.0
+          },
+          {
+            "name": "model.layers.41.mlp.down_proj",
+            "shape": [
+              2048,
+              2048,
+              6144
+            ],
+            "bitwise_equal": true,
+            "max_abs": 0.0
+          }
+        ],
+        "sources": {
+          "matched_gemm.py": "48a65011bc4923f94a5aa42373875b2ffe0476f2ff99fe3466cef2112c91fa98",
+          "packed_swiglu.py": "eee830878de1473c5b4209a7790b1dd03c881e93876b1d205ed349b6fbd51d72",
+          "run_packing_probe.py": "bfe8d28491b20ae23b0697f424ee3d15797da1e274eb761cb0513ff69365c1c5",
+          "__init__.py": "a1a3075a36b225788c71bb84d5530b7e8a994bdc5712fb8e7373d4bcb5550ce4",
+          "packed_bundle.py": "2162ea05cb721888a55a0196ac178f019a9b974b96a7eb006483230682074e6b",
+          "run_layer_cycle.py": "5c1079c938917eaf5bd04d54762459b5b85827094c177cb50d4b9d2733845c3f",
+          "run_service_series.py": "e39bd36dc17a830427ecc808bed7fd59cb8827be565f6890674a6a99427d0494",
+          "service_hook.py": "bb7affd75b99b3bb0943e5101da72c30a20e92cb50e08697c5b5b5a3689aa02f",
+          "run_service_probe.py": "bae538563187fcce54bf4e75f8161305ed405067735e464ef6ab8264dbb01846"
+        },
+        "memory_accounting_added_bytes": 0,
+        "actual_mm_module": "_iluvatar.ops.mm",
+        "actual_mm_source": "/usr/local/lib/python3.12/site-packages/flag_gems/runtime/backend/_iluvatar/ops/mm.py",
+        "actual_mm_source_sha256": "4c2e23da2a6b65b89cbb8170967f14c5327d143e21137387f3907ccb4fcde090"
+      },
+      "gpu_idle_after": true,
+      "usage_cpuinfo_warning": true
+    },
+    "packed": {
+      "startup_seconds": 153.17074414994568,
+      "round_seconds": [
+        43.69317079219036,
+        20.205338950036094,
+        20.231061174999923,
+        20.198854133021086,
+        20.20404262910597
+      ],
+      "later_four": {
+        "mean": 3293.4490034231026,
+        "min": 3289.990545935871,
+        "max": 3295.236430822465,
+        "population_stddev": 2.035579282422358,
+        "spread_percent": 0.1592824082334845
+      },
+      "later_four_mean_ttft_ms": 10186.145158691943,
+      "gpu_kv_tokens": 489072,
+      "runtime_autotune_records": 0,
+      "requests_complete": 87,
+      "active_hook": {
+        "mode": "packed",
+        "pid": 22638,
+        "python_callbacks": 84,
+        "packed_bytes": 1056964608,
+        "registered_layers": [
+          "model.layers.0.mlp.down_proj",
+          "model.layers.1.mlp.down_proj",
+          "model.layers.2.mlp.down_proj",
+          "model.layers.3.mlp.down_proj",
+          "model.layers.4.mlp.down_proj",
+          "model.layers.5.mlp.down_proj",
+          "model.layers.6.mlp.down_proj",
+          "model.layers.7.mlp.down_proj",
+          "model.layers.8.mlp.down_proj",
+          "model.layers.9.mlp.down_proj",
+          "model.layers.10.mlp.down_proj",
+          "model.layers.11.mlp.down_proj",
+          "model.layers.12.mlp.down_proj",
+          "model.layers.13.mlp.down_proj",
+          "model.layers.14.mlp.down_proj",
+          "model.layers.15.mlp.down_proj",
+          "model.layers.16.mlp.down_proj",
+          "model.layers.17.mlp.down_proj",
+          "model.layers.18.mlp.down_proj",
+          "model.layers.19.mlp.down_proj",
+          "model.layers.20.mlp.down_proj",
+          "model.layers.21.mlp.down_proj",
+          "model.layers.22.mlp.down_proj",
+          "model.layers.23.mlp.down_proj",
+          "model.layers.24.mlp.down_proj",
+          "model.layers.25.mlp.down_proj",
+          "model.layers.26.mlp.down_proj",
+          "model.layers.27.mlp.down_proj",
+          "model.layers.28.mlp.down_proj",
+          "model.layers.29.mlp.down_proj",
+          "model.layers.30.mlp.down_proj",
+          "model.layers.31.mlp.down_proj",
+          "model.layers.32.mlp.down_proj",
+          "model.layers.33.mlp.down_proj",
+          "model.layers.34.mlp.down_proj",
+          "model.layers.35.mlp.down_proj",
+          "model.layers.36.mlp.down_proj",
+          "model.layers.37.mlp.down_proj",
+          "model.layers.38.mlp.down_proj",
+          "model.layers.39.mlp.down_proj",
+          "model.layers.40.mlp.down_proj",
+          "model.layers.41.mlp.down_proj"
+        ],
+        "live_validations": [
+          {
+            "name": "model.layers.0.mlp.down_proj",
+            "shape": [
+              2048,
+              2048,
+              6144
+            ],
+            "bitwise_equal": true,
+            "max_abs": 0.0
+          },
+          {
+            "name": "model.layers.21.mlp.down_proj",
+            "shape": [
+              2048,
+              2048,
+              6144
+            ],
+            "bitwise_equal": true,
+            "max_abs": 0.0
+          },
+          {
+            "name": "model.layers.41.mlp.down_proj",
+            "shape": [
+              2048,
+              2048,
+              6144
+            ],
+            "bitwise_equal": true,
+            "max_abs": 0.0
+          }
+        ],
+        "sources": {
+          "matched_gemm.py": "48a65011bc4923f94a5aa42373875b2ffe0476f2ff99fe3466cef2112c91fa98",
+          "packed_swiglu.py": "eee830878de1473c5b4209a7790b1dd03c881e93876b1d205ed349b6fbd51d72",
+          "run_packing_probe.py": "bfe8d28491b20ae23b0697f424ee3d15797da1e274eb761cb0513ff69365c1c5",
+          "__init__.py": "a1a3075a36b225788c71bb84d5530b7e8a994bdc5712fb8e7373d4bcb5550ce4",
+          "packed_bundle.py": "2162ea05cb721888a55a0196ac178f019a9b974b96a7eb006483230682074e6b",
+          "run_layer_cycle.py": "5c1079c938917eaf5bd04d54762459b5b85827094c177cb50d4b9d2733845c3f",
+          "run_service_series.py": "e39bd36dc17a830427ecc808bed7fd59cb8827be565f6890674a6a99427d0494",
+          "service_hook.py": "bb7affd75b99b3bb0943e5101da72c30a20e92cb50e08697c5b5b5a3689aa02f",
+          "run_service_probe.py": "bae538563187fcce54bf4e75f8161305ed405067735e464ef6ab8264dbb01846"
+        },
+        "memory_accounting_added_bytes": 1056964608,
+        "actual_mm_module": "_iluvatar.ops.mm",
+        "actual_mm_source": "/usr/local/lib/python3.12/site-packages/flag_gems/runtime/backend/_iluvatar/ops/mm.py",
+        "actual_mm_source_sha256": "4c2e23da2a6b65b89cbb8170967f14c5327d143e21137387f3907ccb4fcde090"
+      },
+      "gpu_idle_after": true,
+      "usage_cpuinfo_warning": true
+    }
+  },
+  "greedy_equivalence": [
+    {
+      "input_tokens": 565,
+      "equal": true
+    },
+    {
+      "input_tokens": 577,
+      "equal": true
+    },
+    {
+      "input_tokens": 599,
+      "equal": true
+    },
+    {
+      "input_tokens": 1537,
+      "equal": true
+    },
+    {
+      "input_tokens": 1561,
+      "equal": true
+    },
+    {
+      "input_tokens": 2048,
+      "equal": true
+    },
+    {
+      "input_tokens": 4096,
+      "equal": true
+    }
+  ],
+  "sources_verified": true,
+  "service_delta_percent": {
+    "row_vs_original": 0.16417671799588973,
+    "packed_vs_original": 0.43660108135958886,
+    "packed_vs_row": 0.27197783907382256
+  },
+  "kv_drop_percent": 6.296557432328864,
+  "math500_retested": false,
+  "accepted_default": false,
+  "conclusion": "Packing has a reproducible small operator gain; one short serving series measured +0.272% vs matched row and +0.437% vs native, at +1008 MiB weight storage and 6.30% less measured KV capacity. Keep experimental; no official score or MATH claim."
+}
