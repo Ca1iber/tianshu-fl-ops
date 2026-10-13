@@ -1,0 +1,39 @@
+{
+  "complete": true,
+  "cpu_only": true,
+  "synthetic_database": true,
+  "existing_configs_modified": false,
+  "all_checks_passed": true,
+  "rows": [
+    {
+      "table": "config_table_0",
+      "missing": false,
+      "equivalent": true,
+      "original_seconds": 0.1199709989996336,
+      "one_table_seconds": 0.002036742997006513
+    },
+    {
+      "table": "config_table_63",
+      "missing": false,
+      "equivalent": true,
+      "original_seconds": 0.10419204299978446,
+      "one_table_seconds": 0.0024036840004555415
+    },
+    {
+      "table": "config_table_127",
+      "missing": false,
+      "equivalent": true,
+      "original_seconds": 0.11068946999876061,
+      "one_table_seconds": 0.00195460900067701
+    },
+    {
+      "table": "missing_table",
+      "missing": true,
+      "equivalent": true,
+      "original_seconds": 0.14555966800253373,
+      "one_table_seconds": 0.0003181749998475425
+    }
+  ],
+  "old_median_seconds": 0.1153302344991971,
+  "new_median_seconds": 0.0019956759988417616
+}
