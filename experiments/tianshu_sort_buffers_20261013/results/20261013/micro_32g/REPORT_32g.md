@@ -18,3 +18,5 @@ M64×130560随机float32升序：
 结论：private索引32有约16.6%的完整排序微测速度收益；前缀和32单独几乎没有收益，组合增量很小，优先只index32做实际服务对照。这个百分比不是vLLM吞吐提升；候选独立Math和完整正式成绩尚未运行，不能替换正式最好。
 
 全量归档2012098bytes、8parts，SHA256 3f3fbd3848a69c90bec5ad5bfa14029ab40adbe36005b485f3efc9af35e36a32，本地完整核验。helper/probe与真实源快照逐字相同；未采集硬件profiler。不改模型、BF16权重、采样参数或官方benchmark。独立自有Tianshu ops origin已核对Ca1iber/tianshu-fl-ops.git，沐曦仓库只读。
+
+后续热路径核查：天数vLLM batch>=8走原生Triton top-p，仅batch<8走FlagGems sort；MetaX补丁强制PyTorch排序。因此M64 sorter微测不能作为天数大批次热路径收益证明，详见vLLM私有索引服务报告。
