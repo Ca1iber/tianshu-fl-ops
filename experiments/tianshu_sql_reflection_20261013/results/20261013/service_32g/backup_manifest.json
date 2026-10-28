@@ -1,0 +1,62 @@
+{
+  "archive": "/tmp/tianshu_sql_target_reflection_service_20261013.tgz",
+  "bytes": 2862645,
+  "sha256": "11dd697933d5fcb08bc3a1e69186d9cdde05442dc0407bc8eb23fe2ced170a3a",
+  "parts": [
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part000",
+      "bytes": 262144,
+      "sha256": "ec571c1e8a4b278b404f538f23071870862bba2d12044452a6c423fa3d1809e5"
+    },
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part001",
+      "bytes": 262144,
+      "sha256": "98273f7b12ffe20de555cad3a42d0d2668802620ff47823c6f1e664f36c3a87c"
+    },
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part002",
+      "bytes": 262144,
+      "sha256": "06f0d6839660896e0a81e644c005a8cac76747df81f6082b45eb650dfb69fd7f"
+    },
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part003",
+      "bytes": 262144,
+      "sha256": "4b0498ced894bddf4b15229bc575df78dacec3656da0b8a570f74fcdb8740212"
+    },
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part004",
+      "bytes": 262144,
+      "sha256": "effb671a22271dcc5eeb69e3066a45bbff321a10e8a08bed20db14185f3f95a3"
+    },
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part005",
+      "bytes": 262144,
+      "sha256": "83112e9d2d8913e54eb4f70e20b2a9b1f94c1263768a906a340299a9a50772b6"
+    },
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part006",
+      "bytes": 262144,
+      "sha256": "70cd6a8bd5cb6664c2c91950c6344234b1a97076be205d8d74a51f1dd962099d"
+    },
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part007",
+      "bytes": 262144,
+      "sha256": "28f00914707e3014da3cebffc517879c636586814e89f72dd2edf147eeb43a28"
+    },
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part008",
+      "bytes": 262144,
+      "sha256": "49b81fc05728d7cffca0dc6bf263c4aa709ef207e2f6ec0fb4e7be10ac3d0203"
+    },
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part009",
+      "bytes": 262144,
+      "sha256": "6cab66093162ca62269ffa5438e713e7bc8aa81b00d36d9ef1692dbe242ff9d7"
+    },
+    {
+      "name": "tianshu_sql_target_reflection_service_20261013.tgz.part010",
+      "bytes": 241205,
+      "sha256": "b143e461169e96e60451253da27c7a535ad29c643eb548f95349ffe453ab00e4"
+    }
+  ]
+}

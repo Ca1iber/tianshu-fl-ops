@@ -1,0 +1,47 @@
+{
+  "archive": "/tmp/tianshu_sort_buffers32_20261013.tgz",
+  "bytes": 2012098,
+  "sha256": "3f3fbd3848a69c90bec5ad5bfa14029ab40adbe36005b485f3efc9af35e36a32",
+  "parts": [
+    {
+      "name": "tianshu_sort_buffers32_20261013.tgz.part000",
+      "bytes": 262144,
+      "sha256": "fc6e59bb528a9d7e7b44337d7f48843f10e735cdd576bcf6a0420f3e59bac3a9"
+    },
+    {
+      "name": "tianshu_sort_buffers32_20261013.tgz.part001",
+      "bytes": 262144,
+      "sha256": "17518212bcc3ba044ce2ee0e416762f4159256b6b157988638f2c33421bd7edd"
+    },
+    {
+      "name": "tianshu_sort_buffers32_20261013.tgz.part002",
+      "bytes": 262144,
+      "sha256": "bf5f83865b89d24bbc9984ad61f9ceeb8d70af0050d1b71eb8dc7647e9618828"
+    },
+    {
+      "name": "tianshu_sort_buffers32_20261013.tgz.part003",
+      "bytes": 262144,
+      "sha256": "f7854f2c38c6bb5df7e6faf75803fc6600fbe3158da3be9385f9db5315a7ecfc"
+    },
+    {
+      "name": "tianshu_sort_buffers32_20261013.tgz.part004",
+      "bytes": 262144,
+      "sha256": "18319cf3e02a0e0284d59f11c05266de17e51958f0e9789895995dfb78ce0591"
+    },
+    {
+      "name": "tianshu_sort_buffers32_20261013.tgz.part005",
+      "bytes": 262144,
+      "sha256": "98140622d4a97dc51be42758145f0339203bd9308291cf83007da8d5dc264fdf"
+    },
+    {
+      "name": "tianshu_sort_buffers32_20261013.tgz.part006",
+      "bytes": 262144,
+      "sha256": "1d28c3c5d1d37ed6cca70d6461431f13acf82ca1ab0d25b95264f7766b7ec5d1"
+    },
+    {
+      "name": "tianshu_sort_buffers32_20261013.tgz.part007",
+      "bytes": 177090,
+      "sha256": "7597a7e996a21a396c90fbfc99a44c37b5b60c34b82060a65b280c95acbde2b9"
+    }
+  ]
+}

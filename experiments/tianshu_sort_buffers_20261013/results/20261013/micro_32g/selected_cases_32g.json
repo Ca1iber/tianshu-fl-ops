@@ -1,0 +1,162 @@
+[
+  {
+    "m": 64,
+    "n": 130560,
+    "pattern": "random",
+    "descending": false,
+    "variants": [
+      {
+        "label": "original",
+        "values_exact": true,
+        "stable_indices_exact": true,
+        "public_index_dtype": "torch.int64",
+        "graph_values_exact": true,
+        "graph_indices_exact": true,
+        "raw_ms": [
+          24.962783813476562,
+          24.965647888183593,
+          24.923272705078126,
+          24.96077880859375,
+          24.939833068847655,
+          24.954238891601562,
+          24.954067993164063
+        ],
+        "median_ms": 24.954238891601562
+      },
+      {
+        "label": "index32",
+        "values_exact": true,
+        "stable_indices_exact": true,
+        "public_index_dtype": "torch.int64",
+        "graph_values_exact": true,
+        "graph_indices_exact": true,
+        "raw_ms": [
+          21.36150207519531,
+          21.433529663085938,
+          21.386647033691407,
+          21.462522888183592,
+          21.37580108642578,
+          21.41533660888672,
+          21.397671508789063
+        ],
+        "median_ms": 21.397671508789063
+      },
+      {
+        "label": "scan32",
+        "values_exact": true,
+        "stable_indices_exact": true,
+        "public_index_dtype": "torch.int64",
+        "graph_values_exact": true,
+        "graph_indices_exact": true,
+        "raw_ms": [
+          24.955186462402345,
+          24.843797302246095,
+          24.948143005371094,
+          24.953636169433594,
+          24.978733825683594,
+          24.98782958984375,
+          24.954360961914062
+        ],
+        "median_ms": 24.954360961914062
+      },
+      {
+        "label": "both32",
+        "values_exact": true,
+        "stable_indices_exact": true,
+        "public_index_dtype": "torch.int64",
+        "graph_values_exact": true,
+        "graph_indices_exact": true,
+        "raw_ms": [
+          21.439349365234374,
+          21.335653686523436,
+          21.417381286621094,
+          21.387290954589844,
+          21.32270202636719,
+          21.360211181640626,
+          21.349012756347655
+        ],
+        "median_ms": 21.360211181640626
+      }
+    ]
+  },
+  {
+    "m": 64,
+    "n": 130560,
+    "pattern": "random",
+    "descending": true,
+    "variants": [
+      {
+        "label": "original",
+        "values_exact": true,
+        "stable_indices_exact": true,
+        "public_index_dtype": "torch.int64",
+        "graph_values_exact": true,
+        "graph_indices_exact": true,
+        "raw_ms": [
+          24.969349670410157,
+          24.96190490722656,
+          24.986871337890626,
+          25.00129089355469,
+          24.990467834472657,
+          24.99046630859375,
+          25.024014282226563
+        ],
+        "median_ms": 24.99046630859375
+      },
+      {
+        "label": "index32",
+        "values_exact": true,
+        "stable_indices_exact": true,
+        "public_index_dtype": "torch.int64",
+        "graph_values_exact": true,
+        "graph_indices_exact": true,
+        "raw_ms": [
+          21.428866577148437,
+          21.404457092285156,
+          21.40205535888672,
+          21.45440216064453,
+          21.42442626953125,
+          21.449740600585937,
+          21.40469970703125
+        ],
+        "median_ms": 21.42442626953125
+      },
+      {
+        "label": "scan32",
+        "values_exact": true,
+        "stable_indices_exact": true,
+        "public_index_dtype": "torch.int64",
+        "graph_values_exact": true,
+        "graph_indices_exact": true,
+        "raw_ms": [
+          25.004609680175783,
+          24.99971160888672,
+          24.93128662109375,
+          25.01041259765625,
+          24.983462524414062,
+          25.00255889892578,
+          25.053379821777344
+        ],
+        "median_ms": 25.00255889892578
+      },
+      {
+        "label": "both32",
+        "values_exact": true,
+        "stable_indices_exact": true,
+        "public_index_dtype": "torch.int64",
+        "graph_values_exact": true,
+        "graph_indices_exact": true,
+        "raw_ms": [
+          21.34380645751953,
+          21.449264526367188,
+          21.357579040527344,
+          21.401083374023436,
+          21.477273559570314,
+          21.432028198242186,
+          21.467529296875
+        ],
+        "median_ms": 21.432028198242186
+      }
+    ]
+  }
+]

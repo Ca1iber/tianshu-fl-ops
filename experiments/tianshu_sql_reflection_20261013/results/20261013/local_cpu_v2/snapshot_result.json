@@ -1,0 +1,53 @@
+{
+  "complete": true,
+  "all_checks_passed": true,
+  "cpu_only": true,
+  "local_python": "3.13.13",
+  "database_sha256": "d0397de7974ba6b3d83ef8c9749087e8a9b781ec231a0681b8bd532b5fffda94",
+  "total_tables": 902,
+  "foreign_key_tables": [],
+  "source_database_modified": false,
+  "service_performance_not_measured": true,
+  "rows": [
+    {
+      "table": "_index_jit_function_4e3707d56ec36365ece0401adfc4f538ed65a566c0aed02780933c2280de4168_benchmark_v2-5215ee9cc956e852c4668e50daf73835",
+      "missing": false,
+      "columns_primary_key_rows_identical": true,
+      "checked_rows": 4,
+      "full_reflection_seconds": 1.4854580249993887,
+      "target_reflection_seconds": 0.005241409999143798
+    },
+    {
+      "table": "mm_kernel_36ce59ddfe9157c845ec97dbe082e4199b4bb981085cde1f6da15a432167592c_benchmark_v2-45d27be3cd9525ad18861f4533a01e22",
+      "missing": false,
+      "columns_primary_key_rows_identical": true,
+      "checked_rows": 32,
+      "full_reflection_seconds": 1.4875373009999748,
+      "target_reflection_seconds": 0.005025718997785589
+    },
+    {
+      "table": "_index_linearized_jit_function_7e4626a6aeb9a66e5524c5ca3c804845edce6788da8207ab5b2d22bd648c6b81_benchmark_v2-be4075f355600487930f16fe2a2e2b52",
+      "missing": false,
+      "columns_primary_key_rows_identical": true,
+      "checked_rows": 2,
+      "full_reflection_seconds": 1.7868813230015803,
+      "target_reflection_seconds": 0.005212002000916982
+    },
+    {
+      "table": "mul_generic_nd_kernel_c1c7936b6d482c4185b89eb66d708a06-1d9f7dd892860b8746823f50af637361",
+      "missing": false,
+      "columns_primary_key_rows_identical": true,
+      "checked_rows": 25,
+      "full_reflection_seconds": 1.9258644229994388,
+      "target_reflection_seconds": 0.004479842998989625
+    },
+    {
+      "table": "tianshu_missing_config_table",
+      "missing": true,
+      "columns_primary_key_rows_identical": true,
+      "checked_rows": 0,
+      "full_reflection_seconds": 1.6924734360000002,
+      "target_reflection_seconds": 0.0012108250011806376
+    }
+  ]
+}

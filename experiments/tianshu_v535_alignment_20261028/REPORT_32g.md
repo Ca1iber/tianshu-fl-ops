@@ -1,0 +1,11 @@
+# 天数：指定 v5.3.5 SDK 的复现分支
+
+此分支以比赛指定官方a7620cc191a0b42e040194622c5758b22a7a25dc为基线，叠加天数原4cdc3b760205bb4ce7edd9099fa19fa4986adc24相对镜像旧基线4df52d9168ac55c1c1061cefb4638c570292d896的36项自有差异：34个experiments文件新增、flash_api.py/flash_kernel.py两项源码补丁。不是通过合并最新推理框架分支取得收益，版本对齐不作为自有优化成绩。
+
+实际模型配对使用的/dev/shm/tianshu_FlagGems_v535_reference_20261028/src在创建本分支前已经冻结；本分支src全部2606项py/yaml与其逐SHA一致。官方4df→a762未修改上述两个flash文件，自有diff与官方改动路径不交叠。MATCHED_SDK_SOURCES.sha256保留相对路径复核清单；R10_GEMS_SOURCES.sha256额外核对本轮原r10的FlagGems依赖，包含SQL reflection等材料，不能只保留两项src补丁。
+
+本分支在完整GPU评测结束、GPU实际空闲后于容器独立worktree建立。/workspace/FlagGems主工作树仍为4cdc3b76及原分支，原tag/安装环境均未更换。新分支仅用于复现本轮实际SDK和保存既有天数实现，没有新增算子优化或独立性能收益。完整SDK非py辅助文件/包元数据另在天数容器持久归档，不依赖dev/shm跨停机保存。
+
+对应vllm插件完整迭代位于Ca1iber/tianshu-fl-vllm的experiments/tianshu_decode_padding_full_results_20261028：新鲜候选C8/C32各102/105，对照C8 100/105；同SDK官方4K控制6385.8066667/候选6372.22（-0.21276%，波动内），16K控制4436.0166667/候选4568.0033333（+2.97534%）。这是框架decode 32→64图复用的配对结果，不归功于本次SDK分支整理。
+
+可在本worktree执行sha256sum --check --status上述两个清单。更完整的运行/源/图/权重/采样/缓存证据与原CSV在插件结果目录；完整原始包只留容器，GitHub不收模型权重、原始长日志或全量编译cache。

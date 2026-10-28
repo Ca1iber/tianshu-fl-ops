@@ -1,0 +1,12 @@
+{
+  "packed_swiglu.py": {
+    "reference_commit": "3b162a7ba78b4269c62f72d05023949c1e72dbd5",
+    "reference_sha256": "dc621956168d57bc7f5027c1c8ba64319c2a171114ce53d455233c0cba68db06",
+    "adaptation": "Change vendor guard and documentation to Iluvatar; kernels/configurations unchanged."
+  },
+  "packed_bundle.py": {
+    "reference_commit": "3b162a7ba78b4269c62f72d05023949c1e72dbd5",
+    "reference_sha256": "f10a82ac2398bb6237bedea37c535136871ea8bc24d300239a78d312e2641359",
+    "adaptation": "Change vendor guard and documentation to Iluvatar; kernels/configurations unchanged."
+  }
+}
